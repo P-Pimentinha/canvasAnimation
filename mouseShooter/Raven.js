@@ -1,5 +1,7 @@
 class Raven {
+  static #idCounter = 1;
   constructor(canvas) {
+    this.id = Raven.#idCounter++;
     this.spriteWidth = 271;
     this.spriteHeight = 194;
     this.sizeModifier = Math.random() * 0.5 + 0.3;
@@ -16,6 +18,20 @@ class Raven {
     this.maxFrame = 4;
     this.timeSinceFlap = 0;
     this.flapInterval = Math.random() * 50 + 50;
+    this.randomColors = [
+      Math.floor(Math.random * 255),
+      Math.floor(Math.random * 255),
+      Math.floor(Math.random * 255),
+    ];
+
+    this.color =
+      'rgb(' +
+      this.randomColors[0] +
+      ',' +
+      this.randomColors[1] +
+      '+' +
+      this.randomColors[2] +
+      ')';
   }
 
   update(deltatime, canvas) {
