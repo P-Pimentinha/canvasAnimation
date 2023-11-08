@@ -10,8 +10,11 @@ body {
 }
 
 canvas {
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid rgb(236, 17, 17);
 }
 
 img {
