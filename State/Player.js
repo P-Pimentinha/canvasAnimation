@@ -17,6 +17,7 @@ class Player {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
     this.obstacle = obstacle;
+    //state
     this.state = [
       new StandingLeft(this),
       new StandingRight(this),
@@ -30,12 +31,15 @@ class Player {
       new FallingRight(this),
     ];
     this.currentState = this.state[1];
-    this.image = dogImage;
+    //coordinates
     this.width = 200;
     this.height = 181.83;
     this.x = this.gameWidth / 2 - this.width / 2;
     this.y = this.gameHeight / 2 - this.height / 2;
 
+    //
+
+    this.image = dogImage;
     this.frameX = 0;
     this.frameY = 0;
     this.maxFrame = 5;
